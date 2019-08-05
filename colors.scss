@@ -1,0 +1,62 @@
+/** Variables **/
+$color-map: (
+  primary: #6d61cb,
+  secondary: #1c105f,
+  warning: #fc6485,
+  accent: #39e2d7,
+  neutral: #1a1a1a,
+  gray: #a4a4a4,
+);
+
+$color-shade-amount: 12%;
+$color-trans-amount: 0.5;
+
+$colors: ();
+
+@each $code, $color in $color-map {
+  $color-variants: (
+    $code: (
+      base: $color,
+      light: lighten($color, $color-shade-amount),
+      dark: darken($color, $color-shade-amount),
+      trans: transparentize($color, $color-trans-amount)
+    )
+  );
+  $colors: map-merge($colors, $color-variants);
+}
+
+/** This colors will NOT have a base, light, dark, and trans variants **/
+$obligatory-colors: (
+  light: #ffffff,
+  dark: #000000,
+);
+
+$colors: map-merge($colors, $obligatory-colors);
+
+/* Color classes */
+@each $code, $color in $colors {
+  @if type-of($color) == 'map' {
+    @each $colorVariant, $colorCode in $color {
+      @if ($colorVariant == 'base') {
+        .color-#{$code} { color: map-get($color, $colorVariant); }
+        .bg-#{$code} { background-color: map-get($color, $colorVariant); }
+      } @else {
+        .color-#{$code}-#{$colorVariant} { color: map-get($color, $colorVariant); }
+        .bg-#{$code}-#{$colorVariant} { background-color: map-get($color, $colorVariant); }
+      }
+    }
+  } @else {
+    .color-#{$code} { color: $color; }
+    .bg-#{$code} { background-color: $color; }
+  }
+}
+
+@function color($color-name, $color-variant:null) {
+  @if ($color-variant != null) {
+    @if (map-get($colors, $color-name) != null) {
+      @return map-get(map-get($colors, $color-name), $color-variant);
+    }
+  } @else {
+    @return map-get($colors, $color-name);
+  }
+}
