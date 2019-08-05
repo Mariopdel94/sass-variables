@@ -1,0 +1,219 @@
+/* Variables */
+/* This colors will NOT have a base, light, dark, and trans variants */
+/* Generate all the color classes (see css file output) */
+.color-primary {
+  color: #6d61cb;
+}
+
+.bg-primary {
+  background-color: #6d61cb;
+}
+
+.color-primary-light {
+  color: #988fda;
+}
+
+.bg-primary-light {
+  background-color: #988fda;
+}
+
+.color-primary-dark {
+  color: #493bb4;
+}
+
+.bg-primary-dark {
+  background-color: #493bb4;
+}
+
+.color-primary-trans {
+  color: rgba(109, 97, 203, 0.5);
+}
+
+.bg-primary-trans {
+  background-color: rgba(109, 97, 203, 0.5);
+}
+
+.color-secondary {
+  color: #1c105f;
+}
+
+.bg-secondary {
+  background-color: #1c105f;
+}
+
+.color-secondary-light {
+  color: #2b1993;
+}
+
+.bg-secondary-light {
+  background-color: #2b1993;
+}
+
+.color-secondary-dark {
+  color: #0d072b;
+}
+
+.bg-secondary-dark {
+  background-color: #0d072b;
+}
+
+.color-secondary-trans {
+  color: rgba(28, 16, 95, 0.5);
+}
+
+.bg-secondary-trans {
+  background-color: rgba(28, 16, 95, 0.5);
+}
+
+.color-warning {
+  color: #fc6485;
+}
+
+.bg-warning {
+  background-color: #fc6485;
+}
+
+.color-warning-light {
+  color: #fda0b4;
+}
+
+.bg-warning-light {
+  background-color: #fda0b4;
+}
+
+.color-warning-dark {
+  color: #fb2856;
+}
+
+.bg-warning-dark {
+  background-color: #fb2856;
+}
+
+.color-warning-trans {
+  color: rgba(252, 100, 133, 0.5);
+}
+
+.bg-warning-trans {
+  background-color: rgba(252, 100, 133, 0.5);
+}
+
+.color-accent {
+  color: #39e2d7;
+}
+
+.bg-accent {
+  background-color: #39e2d7;
+}
+
+.color-accent-light {
+  color: #6eeae2;
+}
+
+.bg-accent-light {
+  background-color: #6eeae2;
+}
+
+.color-accent-dark {
+  color: #1cc1b7;
+}
+
+.bg-accent-dark {
+  background-color: #1cc1b7;
+}
+
+.color-accent-trans {
+  color: rgba(57, 226, 215, 0.5);
+}
+
+.bg-accent-trans {
+  background-color: rgba(57, 226, 215, 0.5);
+}
+
+.color-neutral {
+  color: #1a1a1a;
+}
+
+.bg-neutral {
+  background-color: #1a1a1a;
+}
+
+.color-neutral-light {
+  color: #393939;
+}
+
+.bg-neutral-light {
+  background-color: #393939;
+}
+
+.color-neutral-dark {
+  color: black;
+}
+
+.bg-neutral-dark {
+  background-color: black;
+}
+
+.color-neutral-trans {
+  color: rgba(26, 26, 26, 0.5);
+}
+
+.bg-neutral-trans {
+  background-color: rgba(26, 26, 26, 0.5);
+}
+
+.color-gray {
+  color: #a4a4a4;
+}
+
+.bg-gray {
+  background-color: #a4a4a4;
+}
+
+.color-gray-light {
+  color: #c3c3c3;
+}
+
+.bg-gray-light {
+  background-color: #c3c3c3;
+}
+
+.color-gray-dark {
+  color: #858585;
+}
+
+.bg-gray-dark {
+  background-color: #858585;
+}
+
+.color-gray-trans {
+  color: rgba(164, 164, 164, 0.5);
+}
+
+.bg-gray-trans {
+  background-color: rgba(164, 164, 164, 0.5);
+}
+
+.color-light {
+  color: #ffffff;
+}
+
+.bg-light {
+  background-color: #ffffff;
+}
+
+.color-dark {
+  color: #000000;
+}
+
+.bg-dark {
+  background-color: #000000;
+}
+
+/* Color function to use on other scss files */
+/* Example: How to use color function */
+.some-class {
+  color: #6d61cb;
+  background-color: rgba(28, 16, 95, 0.5);
+  border: 1px solid #fda0b4;
+}
+/*# sourceMappingURL=colors.css.map */

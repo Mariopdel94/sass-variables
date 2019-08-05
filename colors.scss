@@ -1,4 +1,4 @@
-/** Variables **/
+/* Variables */
 $color-map: (
   primary: #6d61cb,
   secondary: #1c105f,
@@ -25,7 +25,7 @@ $colors: ();
   $colors: map-merge($colors, $color-variants);
 }
 
-/** This colors will NOT have a base, light, dark, and trans variants **/
+/* This colors will NOT have a base, light, dark, and trans variants */
 $obligatory-colors: (
   light: #ffffff,
   dark: #000000,
@@ -33,7 +33,7 @@ $obligatory-colors: (
 
 $colors: map-merge($colors, $obligatory-colors);
 
-/* Color classes */
+/* Generate all the color classes (see css file output) */
 @each $code, $color in $colors {
   @if type-of($color) == 'map' {
     @each $colorVariant, $colorCode in $color {
@@ -51,6 +51,7 @@ $colors: map-merge($colors, $obligatory-colors);
   }
 }
 
+/* Color function to use on other scss files */
 @function color($color-name, $color-variant:null) {
   @if ($color-variant != null) {
     @if (map-get($colors, $color-name) != null) {
@@ -59,4 +60,11 @@ $colors: map-merge($colors, $obligatory-colors);
   } @else {
     @return map-get($colors, $color-name);
   }
+}
+
+/* Example: How to use color function */
+.some-class {
+  color: color(primary, base);
+  background-color: color(secondary, trans);
+  border: 1px solid color(warning, light);
 }
