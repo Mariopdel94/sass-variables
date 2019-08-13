@@ -1,0 +1,78 @@
+body {
+  padding: 0;
+  margin: 0;
+  background: #f2f6e9 !important;
+}
+
+/*--- Navigation bar ---*/
+.navbar {
+  background: #6ab446;
+}
+
+.nav-link,
+.navbar-brand {
+  color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    color: #3f6b29;
+  }
+}
+
+.nav-link {
+  margin-right: 1em !important;
+
+  &:hover {
+    color: #3f6b29;
+  }
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+/*--- Images cards section ---*/
+.features {
+  margin: 4em auto;
+  padding: 1em;
+  position: relative;
+
+  img {
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    margin-bottom: 16px;
+  }
+
+  /*--- Contact form ---*/
+  .btn {
+    background-color: #6ab446;
+    border: 1px solid #6ab446;
+    color: #fff;
+    margin-top: 20px;
+
+    &:hover {
+      background-color: #548f38;
+      border: 1px solid #548f38;
+    }
+  }
+
+}
+
+.feature-title {
+  color: #333;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/*--- Footer ---*/
+.page-footer {
+  background-color: #222;
+  color: #ccc;
+  padding: 60px 0 30px;
+}
+
+.footer-copyright {
+  color: #666;
+  padding: 40px 0;
+}

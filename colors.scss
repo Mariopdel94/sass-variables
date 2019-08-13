@@ -1,14 +1,12 @@
 /* Variables */
 $color-map: (
-  primary: #6d61cb,
-  secondary: #1c105f,
-  warning: #fc6485,
-  accent: #39e2d7,
-  neutral: #1a1a1a,
-  gray: #a4a4a4,
+  primary: #6ab446,
+  secondary: #cccccc,
+  neutral: #333333,
 );
 
-$color-shade-amount: 12%;
+$color-shade-amount: 10%;
+$color-shader-amount: 20%;
 $color-trans-amount: 0.5;
 
 $colors: ();
@@ -18,47 +16,29 @@ $colors: ();
     $code: (
       base: $color,
       light: lighten($color, $color-shade-amount),
+      lighter: lighten($color, $color-shader-amount),
       dark: darken($color, $color-shade-amount),
+      darker: darken($color, $color-shader-amount),
       trans: transparentize($color, $color-trans-amount)
     )
   );
   $colors: map-merge($colors, $color-variants);
 }
 
-/* This colors will NOT have a base, light, dark, and trans variants */
-$obligatory-colors: (
-  light: #ffffff,
-  dark: #000000,
-);
-
-$colors: map-merge($colors, $obligatory-colors);
-
 /* Generate all the color classes (see css file output) */
 @each $code, $color in $colors {
   @if type-of($color) == 'map' {
     @each $colorVariant, $colorCode in $color {
-      @if ($colorVariant == 'base') {
-        .color-#{$code} { color: map-get($color, $colorVariant); }
-        .bg-#{$code} { background-color: map-get($color, $colorVariant); }
-      } @else {
-        .color-#{$code}-#{$colorVariant} { color: map-get($color, $colorVariant); }
-        .bg-#{$code}-#{$colorVariant} { background-color: map-get($color, $colorVariant); }
-      }
+      .color-#{$code}-#{$colorVariant} { color: map-get($color, $colorVariant); }
+      .bg-#{$code}-#{$colorVariant} { background-color: map-get($color, $colorVariant); }
     }
-  } @else {
-    .color-#{$code} { color: $color; }
-    .bg-#{$code} { background-color: $color; }
   }
 }
 
 /* Color function to use on other scss files */
 @function color($color-name, $color-variant:null) {
-  @if ($color-variant != null) {
-    @if (map-get($colors, $color-name) != null) {
-      @return map-get(map-get($colors, $color-name), $color-variant);
-    }
-  } @else {
-    @return map-get($colors, $color-name);
+  @if (map-get($colors, $color-name) != null) {
+    @return map-get(map-get($colors, $color-name), $color-variant);
   }
 }
 
@@ -66,5 +46,4 @@ $colors: map-merge($colors, $obligatory-colors);
 .some-class {
   color: color(primary, base);
   background-color: color(secondary, trans);
-  border: 1px solid color(warning, light);
 }
