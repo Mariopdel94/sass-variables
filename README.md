@@ -38,7 +38,7 @@ $colors: (
     dark: darken(#FFBB00, 15%),
     trans: transparentize(#FFBB00, 0.5)
   ),
-  // and another. is the totem still spinning?
+  // and another...
   secondary: (
     base: #0969A2,
     light: lighten(#0969A2, 15%),
